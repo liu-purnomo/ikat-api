@@ -1,0 +1,14 @@
+{
+  "types": [
+    { "type": "feat", "section": "✨ Features" },
+    { "type": "fix", "section": "🐛 Bug Fixes" },
+    { "type": "chore", "section": "🔧 Chores" },
+    { "type": "docs", "section": "📝 Documentation" },
+    { "type": "refactor", "section": "🧠 Refactoring" },
+    { "type": "test", "section": "✅ Tests" },
+    { "type": "style", "section": "🎨 Styling" }
+  ],
+  "commitUrlFormat": "https://github.com/liu-purnomo/ikat-api/commit/{{hash}}",
+  "issueUrlFormat": "https://github.com/liu-purnomo/ikat-api/issues/{{id}}",
+  "compareUrlFormat": "https://github.com/liu-purnomo/ikat-api/compare/{{previousTag}}...{{currentTag}}"
+}

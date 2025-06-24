@@ -1,0 +1,53 @@
+{
+  "name": "ikat-api",
+  "version": "1.0.0",
+  "description": "Simple API client for Ikat Pro (https://api.ikat.id)",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build",
+    "test": "vitest run",
+    "test:ui": "vitest --ui",
+    "release": "standard-version",
+    "release:minor": "standard-version --release-as minor",
+    "release:major": "standard-version --release-as major",
+    "postrelease": "git push --follow-tags origin main && npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/liu-purnomo/ikat-api.git"
+  },
+  "keywords": [
+    "ikat",
+    "api",
+    "file-sharing",
+    "storage",
+    "client"
+  ],
+  "author": "Liu Purnomo <hi@liupurnomo.com>",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.0",
+    "dotenv": "^16.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.3",
+    "@vitest/ui": "^3.2.4",
+    "form-data": "^4.0.3",
+    "happy-dom": "^18.0.1",
+    "standard-version": "^9.5.0",
+    "typescript": "^5.0.0",
+    "vitest": "^3.2.4"
+  }
+}
