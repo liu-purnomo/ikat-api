@@ -1,6 +1,6 @@
 {
   "name": "ikat-api",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple API client for Ikat Pro (https://api.ikat.id)",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
