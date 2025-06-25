@@ -1,30 +1,33 @@
 # 📦 ikat-api
 
-Simple Node.js client for [Ikat Pro](https://ikat.id) – a lightweight file sharing service that works like S3 or Cloudinary, but way simpler (and free!).
+Simple SDK for [Ikat Pro](https://ikat.id) – a modern and minimalist file hosting service that works like S3 or Cloudinary, but way simpler (and free!).
 
 ---
 
 ## ✨ What is Ikat Pro?
 
-[Ikat Pro](https://ikat.id) is a minimalist file hosting service. It lets you upload files (like images, PDFs, or ZIPs) via API, store them under a specific bucket, and manage them securely using API keys with domain restrictions.
+[Ikat Pro](https://ikat.id) is a zero-config file storage service. It lets you:
+- Upload files under a specific bucket
+- Get a public URL instantly
+- Delete, list, or replace files via API
+- Use API keys with domain restrictions
 
 ---
 
-## 🧑‍💻 Getting Started
+## 🚀 Quick Start
 
-Before using this package, **you need to register an account** at:
+### 1. Register & Get API Key
 
 👉 https://api.ikat.id/
 
-After registering and logging in, you’ll get:
-- Your personal **API Key**
-- The ability to set **Allowed Origins** (for domain-restricted access)
-- Access to full documentation at:  
-  👉 https://api.ikat.id/docs
+You'll receive:
+- ✅ API Key
+- ✅ Allowed Origin (for CORS protection)
+- ✅ Access to docs at https://api.ikat.id/docs
 
 ---
 
-## 📥 Installation
+### 2. Install Package
 
 ```bash
 npm install ikat-api
@@ -34,39 +37,88 @@ npm install ikat-api
 
 ## 🛠️ Usage
 
+### ✅ Initialize
+
 ```ts
 import { Ikat } from 'ikat-api';
-import fs from 'fs';
 
 const ikat = new Ikat({
   apiKey: 'your-api-key',
-  origin: 'https://yourdomain.com', // optional but recommended
+  origin: 'https://yourdomain.com', // optional, highly recommended for browser
 });
-
-const file = fs.readFileSync('./my-image.png');
-
-const uploaded = await ikat.add({
-  bucket: 'your-bucket',
-  file,
-  filename: 'my-image.png',
-  contentType: 'image/png',
-});
-
-console.log('URL:', uploaded.url);
-
-// List files in bucket
-const result = await ikat.file('your-bucket');
-console.log(result.files);
-
-// Delete a file
-await ikat.delete({ bucket: 'your-bucket', key: 'my-image.png' });
 ```
 
 ---
 
-## ✅ Supported File Types
+### 📤 Upload a File
 
-Only the following file types are allowed:
+```ts
+const input = document.querySelector('input[type="file"]');
+const file = input.files[0];
+
+await ikat.upload({
+  bucket: 'my-bucket',
+  file,
+});
+```
+
+---
+
+### 📥 Upload Multiple Files
+
+```ts
+const files = [...document.querySelector('input[type="file"]').files];
+await ikat.uploadMultiple('my-bucket', files);
+```
+
+---
+
+### 🔁 Replace a File
+
+```ts
+await ikat.replace({
+  bucket: 'my-bucket',
+  file: newFile,
+  oldUrl: 'https://api.ikat.id/user-id/my-bucket/old-image.jpg',
+});
+```
+
+> ✅ You can pass either full URL or just filename (e.g., `old-image.jpg`)
+
+---
+
+### ❌ Delete a File
+
+```ts
+await ikat.remove({
+  bucket: 'my-bucket',
+  key: 'old-image.jpg', // or full URL
+});
+```
+
+---
+
+### ❌❌ Delete Multiple Files
+
+```ts
+await ikat.deleteMultiple('my-bucket', [
+  'img1.png',
+  'https://api.ikat.id/user-id/my-bucket/img2.png',
+]);
+```
+
+---
+
+### 📂 List Files in Bucket
+
+```ts
+const files = await ikat.list('my-bucket');
+console.log(files);
+```
+
+---
+
+## 🧾 Supported File Types
 
 | Extension | MIME Type         |
 | --------- | ----------------- |
@@ -78,9 +130,13 @@ Only the following file types are allowed:
 
 ---
 
-## 🌐 Origin Protection
+## 🔒 Origin Protection (CORS)
 
-To prevent abuse, you can restrict API usage to specific domains by setting `origin` in your Ikat dashboard. Then, pass it in the client:
+To secure your API:
+
+1. Go to [https://api.ikat.id](https://api.ikat.id)
+2. Set allowed origins (e.g. `https://yourdomain.com`)
+3. In your code, always set:
 
 ```ts
 const ikat = new Ikat({
@@ -93,8 +149,6 @@ const ikat = new Ikat({
 
 ## 🧪 Testing
 
-This package is tested with [Vitest](https://vitest.dev/).
-
 ```bash
 npm run test
 ```
@@ -104,4 +158,7 @@ npm run test
 ## 📄 License
 
 MIT © [Liu Purnomo](https://liupurnomo.com)
-# ikat-api
+
+---
+
+Made with ❤️ to simplify file uploads.

@@ -38,10 +38,10 @@
   "author": "Liu Purnomo <hi@liupurnomo.com>",
   "license": "MIT",
   "dependencies": {
-    "axios": "^1.6.0",
-    "dotenv": "^16.5.0"
+    "axios": "^1.6.0"
   },
   "devDependencies": {
+    "dotenv": "^16.5.0",
     "@types/node": "^24.0.3",
     "@vitest/ui": "^3.2.4",
     "form-data": "^4.0.3",
