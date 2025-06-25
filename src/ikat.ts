@@ -127,12 +127,17 @@ export class Ikat {
 
   /**
    * Replace an old file with a new one in the same bucket
+   * Will continue uploading even if deletion fails
    * @param bucket Bucket name
    * @param file New file to upload
    * @param oldUrl Optional URL of old file to delete
    * @returns Upload result
    * @example
-   * await ikat.replace({ bucket: 'media', file, oldUrl: 'https://api.ikat.id/user-id/bucket/key-file123.jpg' });
+   * await ikat.replace({
+   *   bucket: 'media',
+   *   file,
+   *   oldUrl: 'https://api.ikat.id/user-id/media/old-file.png'
+   * });
    */
   async replace({
     bucket,
@@ -144,8 +149,15 @@ export class Ikat {
     oldUrl?: string;
   }) {
     if (oldUrl) {
-      const key = oldUrl.split('/').pop()!;
-      await this.remove({ bucket, key });
+      const key = extractKey(oldUrl);
+      try {
+        await this.remove({ bucket, key });
+      } catch (err) {
+        // Silent error logging — does not prevent upload
+        if (process.env.NODE_ENV !== 'production') {
+          console.warn(`[ikat.replace] Failed to delete old file: ${key}`);
+        }
+      }
     }
 
     return this.upload({ bucket, file });
