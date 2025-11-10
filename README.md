@@ -270,6 +270,20 @@ MIT © [Liu Purnomo](https://liupurnomo.com)
 
 ---
 
+## 🔒 Security
+
+For security issues, please see our [Security Policy](./SECURITY.md).
+
+We take security seriously and follow best practices for handling vulnerabilities.
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions! Please read our [Code of Conduct](./CODE_OF_CONDUCT.md) before contributing.
+
+---
+
 ## 🔄 Migration Guide (V1 → V2)
 
 ### Why Migrate to V2?

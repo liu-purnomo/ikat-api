@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.2] - 2025-01-11
+
+### Added
+- Added comprehensive SECURITY.md with vulnerability reporting guidelines
+- Added security best practices for API key management and file uploads
+- Added CODE_OF_CONDUCT.md based on Contributor Covenant 2.0
+- Added links to security policy and code of conduct in README
+
+### Changed
+- Updated README with security and contributing sections
+
+---
+
 ## [2.0.1] - 2025-01-11
 
 ### Changed
@@ -12,9 +25,12 @@ All notable changes to this project will be documented in this file.
 - Removed `standard-version` package (changelog will be managed manually)
 - Removed unnecessary npm scripts related to standard-version
 - Updated CHANGELOG format to manual management
+- Updated all documentation URLs from `pro.ikat.id` to `ikat.id`
+- Updated package description to use correct domain
 
 ### Fixed
 - Resolved security vulnerability in happy-dom dependency
+- Fixed outdated URLs across all documentation files
 
 ---
 

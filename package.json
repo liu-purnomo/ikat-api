@@ -1,6 +1,6 @@
 {
   "name": "ikat-api",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Simple API client for Ikat (https://ikat.id) - Now with V2 featuring image optimization and public/private toggle",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
