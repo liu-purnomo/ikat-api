@@ -2,6 +2,63 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0] - TBD
+
+### Added - V2 Features
+
+#### New Class: `IkatV2`
+- New modern API client with enhanced features
+- Base URL changed from `https://api.ikat.id` to `https://ikat.id`
+- Uses `POST` method instead of `PUT` for uploads
+
+#### Image Optimization
+- Automatic WebP conversion for uploaded images
+- Three optimized sizes generated automatically:
+  - **Large**: 1920px width (for hero images)
+  - **Small**: 800px width (for content images)
+  - **Thumb**: 300px width (for thumbnails)
+- Original file is always preserved
+- Non-image files return only the original URL
+
+#### Public/Private Access Control
+- New `allowPublicAccess` parameter for uploads (default: `true`)
+- Control file access: public (anyone) or private (requires authentication)
+- Example: `await ikat.upload({ bucket, file, allowPublicAccess: false })`
+
+#### Bucket Deletion
+- New `deleteBucket(bucket: string)` method
+- Deletes entire bucket and all its contents
+- Returns count of deleted files
+
+#### Enhanced Response Format
+- Upload response now includes multiple URLs for images:
+  - `urls.original` - Original file
+  - `urls.large` - 1920px WebP version
+  - `urls.small` - 800px WebP version
+  - `urls.thumb` - 300px WebP version
+
+#### Improved Delete Operations
+- Delete operations automatically remove optimized WebP versions
+- Prevents orphaned files in storage
+
+### Changed
+
+- **V1 Deprecated**: The original `Ikat` class is deprecated but still functional
+- **Export Structure**: Both `Ikat` (V1) and `IkatV2` are exported
+- **Documentation**: Added comprehensive migration guide (MIGRATION.md)
+
+### Breaking Changes (V2 Only)
+
+1. **Base URL**: `https://api.ikat.id` → `https://ikat.id`
+2. **Upload Method**: `PUT` → `POST`
+3. **Response Format**: Single `url` → `urls` object with multiple versions
+
+### Migration
+
+See [MIGRATION.md](./MIGRATION.md) for detailed migration guide from V1 to V2.
+
+---
+
 ## [1.2.0](https://github.com/liu-purnomo/ikat-api/compare/v1.1.0...v1.2.0) (2025-06-25)
 
 

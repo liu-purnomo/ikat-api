@@ -1,7 +1,7 @@
 {
   "name": "ikat-api",
-  "version": "1.2.0",
-  "description": "Simple API client for Ikat Pro (https://api.ikat.id)",
+  "version": "2.0.0",
+  "description": "Simple API client for Ikat Pro (https://pro.ikat.id) - Now with V2 featuring image optimization and public/private toggle",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
@@ -33,7 +33,12 @@
     "api",
     "file-sharing",
     "storage",
-    "client"
+    "client",
+    "image-optimization",
+    "webp",
+    "file-upload",
+    "cdn",
+    "cloud-storage"
   ],
   "author": "Liu Purnomo <hi@liupurnomo.com>",
   "license": "MIT",
