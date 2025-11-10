@@ -209,7 +209,7 @@ Potential features for future versions:
 For questions or issues:
 - Email: [hi@liupurnomo.com](mailto:hi@liupurnomo.com)
 - GitHub: [Issues](https://github.com/liu-purnomo/ikat-api/issues)
-- Docs: [https://pro.ikat.id/docs](https://pro.ikat.id/docs)
+- Docs: [https://ikat.id/docs](https://ikat.id/docs)
 
 ---
 

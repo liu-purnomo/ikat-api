@@ -1,8 +1,24 @@
 # Changelog
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+All notable changes to this project will be documented in this file.
 
-## [2.0.0] - TBD
+## [2.0.1] - 2025-01-11
+
+### Changed
+- Cleaned up unnecessary development dependencies
+- Removed `happy-dom` package (security vulnerability and unused)
+- Removed `@vitest/ui` package (not needed for production)
+- Removed `dotenv` package (unused in source code)
+- Removed `standard-version` package (changelog will be managed manually)
+- Removed unnecessary npm scripts related to standard-version
+- Updated CHANGELOG format to manual management
+
+### Fixed
+- Resolved security vulnerability in happy-dom dependency
+
+---
+
+## [2.0.0] - 2025-01-11
 
 ### Added - V2 Features
 

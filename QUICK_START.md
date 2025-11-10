@@ -10,7 +10,7 @@ npm install ikat-api
 
 ## Get Your API Key
 
-Visit [https://pro.ikat.id](https://pro.ikat.id) to register and get your API key.
+Visit [https://ikat.id](https://ikat.id) to register and get your API key.
 
 ## Choose Your Version
 
@@ -135,7 +135,7 @@ await ikat.deleteBucket('old-bucket');
 ## Need Help?
 
 - 📧 Email: [hi@liupurnomo.com](mailto:hi@liupurnomo.com)
-- 📚 Documentation: [https://pro.ikat.id/docs](https://pro.ikat.id/docs)
+- 📚 Documentation: [https://ikat.id/docs](https://ikat.id/docs)
 
 ---
 

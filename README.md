@@ -1,6 +1,6 @@
 # 📦 ikat-api
 
-Simple SDK for [Ikat Pro](https://pro.ikat.id) – a modern and minimalist file hosting service that works like S3 or Cloudinary, but way simpler (and free!).
+Simple SDK for [Ikat](https://ikat.id) – a modern and minimalist file hosting service that works like S3 or Cloudinary, but way simpler (and free!).
 
 ---
 
@@ -30,9 +30,9 @@ This package now includes **two versions**:
 
 ---
 
-## ✨ What is Ikat Pro?
+## ✨ What is Ikat?
 
-[Ikat Pro](https://pro.ikat.id) is a zero-config file storage service. It lets you:
+[Ikat](https://ikat.id) is a zero-config file storage service. It lets you:
 - Upload files under a specific bucket
 - Get a public URL instantly (or keep it private)
 - Automatic image optimization with multiple sizes
@@ -45,12 +45,12 @@ This package now includes **two versions**:
 
 ### 1. Register & Get API Key
 
-👉 https://pro.ikat.id/
+👉 https://ikat.id/
 
 You'll receive:
 - ✅ API Key
 - ✅ Allowed Origin (for CORS protection)
-- ✅ Access to docs at https://pro.ikat.id/docs
+- ✅ Access to docs at https://ikat.id/docs
 
 ---
 

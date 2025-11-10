@@ -414,7 +414,7 @@ import { Ikat, IkatV2 } from 'ikat-api';
 If you encounter issues during migration:
 
 - 📧 Email: [hi@liupurnomo.com](mailto:hi@liupurnomo.com)
-- 📚 Documentation: [https://pro.ikat.id/docs](https://pro.ikat.id/docs)
+- 📚 Documentation: [https://ikat.id/docs](https://ikat.id/docs)
 - 🐛 Issues: [GitHub Issues](https://github.com/liu-purnomo/ikat-api/issues)
 
 ---
